@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COLA FRONT-END</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #000000;
-      --surface:   #000000;
-      --surface2:  #000000;
-      --surface3:  #000000;
-      --border:    #131313;
-      --border2:   #131313;
-      --accent:    #00e5a0;
-      --accent2:   #00b8ff;
-      --accent3:   #ff6b6b;
-      --accent4:   #ffd93d;
-      --text:      #e8eaf0;
-      --text-dim:  #6b7a99;
-      --text-mid:  #a0aec0;
-      --mono:      'DM Mono', monospace;
-      --sans:      'Syne', sans-serif;
-      --sidebar-w: 230px;
-      --radius:    8px;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #000000;
+      --surface: #000000;
+      --surface2: #000000;
+      --surface3: #000000;
+      --border: #131313;
+      --border2: #131313;
+      --accent: #00e5a0;
+      --accent2: #00b8ff;
+      --accent3: #ff6b6b;
+      --accent4: #ffd93d;
+      --text: #e8eaf0;
+      --text-dim: #6b7a99;
+      --text-mid: #a0aec0;
+      --mono: 'DM Mono', monospace;
+      --sans: 'Syne', sans-serif;
+      --sidebar-w: 230px;
+      --radius: 8px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: var(--sans);
@@ -41,9 +52,19 @@
       min-height: 100vh;
     }
 
-    ::-webkit-scrollbar { width: 5px; height: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 99px; }
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border2);
+      border-radius: 99px;
+    }
 
     /* ═══ SIDEBAR ═══ */
     .sidebar {
@@ -79,7 +100,9 @@
       color: var(--text-dim);
     }
 
-    .sidebar nav { padding: 10px 0; }
+    .sidebar nav {
+      padding: 10px 0;
+    }
 
     .nav-group-label {
       font-family: var(--mono);
@@ -106,13 +129,20 @@
     .sidebar nav a:hover {
       color: var(--accent);
       border-left-color: var(--accent);
-      background: linear-gradient(to right, rgba(0,229,160,0.06), transparent);
+      background: linear-gradient(to right, rgba(0, 229, 160, 0.06), transparent);
     }
 
-    .nav-num { font-size: 9px; color: var(--text-dim); min-width: 16px; }
+    .nav-num {
+      font-size: 9px;
+      color: var(--text-dim);
+      min-width: 16px;
+    }
 
     /* ═══ MAIN ═══ */
-    .main { flex: 1; min-width: 0; }
+    .main {
+      flex: 1;
+      min-width: 0;
+    }
 
     .page-header {
       padding: 40px 48px 34px;
@@ -125,9 +155,11 @@
     .page-header::before {
       content: '';
       position: absolute;
-      top: -80px; right: -80px;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(0,229,160,0.07) 0%, transparent 70%);
+      top: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0, 229, 160, 0.07) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -152,9 +184,17 @@
       margin-bottom: 8px;
     }
 
-    .page-header p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); }
+    .page-header p {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+    }
 
-    .header-tags { display: flex; gap: 8px; margin-top: 14px; }
+    .header-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
 
     .tag {
       font-family: var(--mono);
@@ -164,16 +204,34 @@
       border: 1px solid var(--border2);
       color: var(--text-dim);
     }
-    .tag.green { border-color: rgba(0,229,160,0.4); color: var(--accent); background: rgba(0,229,160,0.06); }
-    .tag.blue  { border-color: rgba(0,184,255,0.4); color: var(--accent2); background: rgba(0,184,255,0.06); }
-    .tag.red   { border-color: rgba(255,107,107,0.4); color: var(--accent3); background: rgba(255,107,107,0.06); }
+
+    .tag.green {
+      border-color: rgba(0, 229, 160, 0.4);
+      color: var(--accent);
+      background: rgba(0, 229, 160, 0.06);
+    }
+
+    .tag.blue {
+      border-color: rgba(0, 184, 255, 0.4);
+      color: var(--accent2);
+      background: rgba(0, 184, 255, 0.06);
+    }
+
+    .tag.red {
+      border-color: rgba(255, 107, 107, 0.4);
+      color: var(--accent3);
+      background: rgba(255, 107, 107, 0.06);
+    }
 
     /* ═══ SECTIONS ═══ */
     .section {
       border-bottom: 1px solid var(--border);
       padding: 38px 48px;
     }
-    .section:nth-child(even) { background: rgba(255,255,255,0.012); }
+
+    .section:nth-child(even) {
+      background: rgba(255, 255, 255, 0.012);
+    }
 
     .section-header {
       display: flex;
@@ -186,8 +244,8 @@
       font-family: var(--mono);
       font-size: 10px;
       color: var(--accent);
-      background: rgba(0,229,160,0.1);
-      border: 1px solid rgba(0,229,160,0.25);
+      background: rgba(0, 229, 160, 0.1);
+      border: 1px solid rgba(0, 229, 160, 0.25);
       padding: 3px 9px;
       border-radius: 4px;
     }
@@ -214,7 +272,10 @@
       overflow: hidden;
       transition: border-color 0.2s;
     }
-    .card:hover { border-color: var(--border2); }
+
+    .card:hover {
+      border-color: var(--border2);
+    }
 
     .card-label {
       background: var(--surface3);
@@ -227,7 +288,9 @@
       text-transform: uppercase;
     }
 
-    .card-body { padding: 13px 14px; }
+    .card-body {
+      padding: 13px 14px;
+    }
 
     .card-note {
       font-size: 11px;
@@ -250,7 +313,8 @@
 
     .demo-label {
       position: absolute;
-      top: 5px; right: 8px;
+      top: 5px;
+      right: 8px;
       font-size: 8px;
       font-family: var(--mono);
       color: var(--text-dim);
@@ -282,16 +346,30 @@
       margin-bottom: 3px;
     }
 
-    .ck { color: #79b8ff; }
-    .cv { color: #ffab70; }
-    .ct { color: #b392f0; }
-    .cc { color: #444d60; }
-    .cp { color: #e1e4e8; }
+    .ck {
+      color: #79b8ff;
+    }
+
+    .cv {
+      color: #ffab70;
+    }
+
+    .ct {
+      color: #b392f0;
+    }
+
+    .cc {
+      color: #444d60;
+    }
+
+    .cp {
+      color: #e1e4e8;
+    }
 
     /* ═══ CALLOUTS ═══ */
     .callout {
       border-left: 3px solid var(--accent4);
-      background: rgba(255,217,61,0.05);
+      background: rgba(255, 217, 61, 0.05);
       padding: 9px 14px;
       font-size: 11px;
       margin: 10px 0;
@@ -299,8 +377,18 @@
       font-family: var(--mono);
       border-radius: 0 6px 6px 0;
     }
-    .callout.danger { border-color: var(--accent3); background: rgba(255,107,107,0.05); color: #ff9090; }
-    .callout.tip    { border-color: var(--accent);  background: rgba(0,229,160,0.05);  color: #6effd2; }
+
+    .callout.danger {
+      border-color: var(--accent3);
+      background: rgba(255, 107, 107, 0.05);
+      color: #ff9090;
+    }
+
+    .callout.tip {
+      border-color: var(--accent);
+      background: rgba(0, 229, 160, 0.05);
+      color: #6effd2;
+    }
 
     /* ═══ SUBSECTION ═══ */
     .subsection {
@@ -315,13 +403,18 @@
     }
 
     /* ═══ TABLES ═══ */
-    .ref-table, .struct-table, .pseudo-table {
+    .ref-table,
+    .struct-table,
+    .pseudo-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 12px;
       font-family: var(--mono);
     }
-    .ref-table th, .struct-table th, .pseudo-table th {
+
+    .ref-table th,
+    .struct-table th,
+    .pseudo-table th {
       background: var(--surface3);
       color: var(--text-mid);
       padding: 8px 14px;
@@ -330,25 +423,58 @@
       letter-spacing: 0.05em;
       border-bottom: 1px solid var(--border2);
     }
-    .ref-table td, .struct-table td, .pseudo-table td {
+
+    .ref-table td,
+    .struct-table td,
+    .pseudo-table td {
       padding: 7px 14px;
       border-bottom: 1px solid var(--border);
       vertical-align: top;
       color: var(--text-mid);
     }
+
     .ref-table tr:hover td,
     .struct-table tr:hover td,
-    .pseudo-table tr:hover td { background: rgba(255,255,255,0.02); }
-    .struct-table .tag { color: var(--accent3); }
-    .ref-table .prop, .pseudo-table .prop { color: var(--accent2); }
-    .ref-table .val  { color: #ffab70; }
-    .ref-table .desc { color: var(--text-dim); font-size: 11px; }
+    .pseudo-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .struct-table .tag {
+      color: var(--accent3);
+    }
+
+    .ref-table .prop,
+    .pseudo-table .prop {
+      color: var(--accent2);
+    }
+
+    .ref-table .val {
+      color: #ffab70;
+    }
+
+    .ref-table .desc {
+      color: var(--text-dim);
+      font-size: 11px;
+    }
 
     /* ═══ LAYOUT ═══ */
-    .two-col   { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .mt10 { margin-top: 10px; }
-    .mt16 { margin-top: 16px; }
-    .mb14 { margin-bottom: 14px; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .mt10 {
+      margin-top: 10px;
+    }
+
+    .mt16 {
+      margin-top: 16px;
+    }
+
+    .mb14 {
+      margin-bottom: 14px;
+    }
 
     /* ═══ SEC 2 — Layout diagram ═══ */
     .layout-diagram {
@@ -358,83 +484,363 @@
       font-family: var(--mono);
       font-size: 10px;
     }
-    .ld-header  { background: linear-gradient(90deg,#141e30,#0d1828); color: var(--accent2); padding: 10px 16px; }
-    .ld-nav     { background: #0d1520; color: var(--text-dim); padding: 6px 16px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
-    .ld-hero    { background: linear-gradient(135deg,#0d1a2e,#0a1628); color: var(--text); padding: 22px 16px; border-bottom: 1px solid var(--border); }
-    .ld-container { max-width: 90%; margin: 0 auto; border-left: 1px dashed rgba(0,229,160,0.25); border-right: 1px dashed rgba(0,229,160,0.25); padding: 0 10px; }
-    .ld-section { padding: 12px 16px; background: var(--surface2); border-bottom: 1px solid var(--border); color: var(--text-dim); }
-    .ld-cols    { display: flex; gap: 6px; margin: 6px 0; }
-    .ld-col     { flex: 1; background: var(--surface3); border: 1px solid var(--border2); padding: 8px 4px; text-align: center; color: var(--text-dim); border-radius: 4px; }
-    .ld-footer  { background: #06080d; color: var(--text-dim); padding: 10px 16px; }
+
+    .ld-header {
+      background: linear-gradient(90deg, #141e30, #0d1828);
+      color: var(--accent2);
+      padding: 10px 16px;
+    }
+
+    .ld-nav {
+      background: #0d1520;
+      color: var(--text-dim);
+      padding: 6px 16px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ld-hero {
+      background: linear-gradient(135deg, #0d1a2e, #0a1628);
+      color: var(--text);
+      padding: 22px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ld-container {
+      max-width: 90%;
+      margin: 0 auto;
+      border-left: 1px dashed rgba(0, 229, 160, 0.25);
+      border-right: 1px dashed rgba(0, 229, 160, 0.25);
+      padding: 0 10px;
+    }
+
+    .ld-section {
+      padding: 12px 16px;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+
+    .ld-cols {
+      display: flex;
+      gap: 6px;
+      margin: 6px 0;
+    }
+
+    .ld-col {
+      flex: 1;
+      background: var(--surface3);
+      border: 1px solid var(--border2);
+      padding: 8px 4px;
+      text-align: center;
+      color: var(--text-dim);
+      border-radius: 4px;
+    }
+
+    .ld-footer {
+      background: #06080d;
+      color: var(--text-dim);
+      padding: 10px 16px;
+    }
 
     /* ═══ SEC 3 — Position ═══ */
-    .pos-demo-wrap { background: var(--bg); height: 110px; position: relative; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
-    .pos-box { width: 64px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 9px; font-family: var(--mono); font-weight: 500; text-align: center; border-radius: 4px; }
-    .pos-static   { background: rgba(0,184,255,0.15); border: 1px solid rgba(0,184,255,0.4); color: var(--accent2); position: static; }
-    .pos-relative { background: rgba(255,171,112,0.15); border: 1px solid rgba(255,171,112,0.4); color: #ffab70; position: relative; top: 10px; left: 10px; }
-    .pos-absolute { background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.4); color: var(--accent3); position: absolute; top: 8px; right: 8px; }
-    .pos-sticky-demo { background: rgba(0,229,160,0.12); border-bottom: 1px solid rgba(0,229,160,0.25); color: var(--accent); font-size: 9px; font-family: var(--mono); padding: 5px 10px; position: sticky; top: 0; z-index: 1; }
-    .scroll-area { height: 80px; overflow-y: auto; background: var(--bg); font-size: 10px; font-family: var(--mono); color: var(--text-dim); border: 1px solid var(--border); border-radius: 6px; }
+    .pos-demo-wrap {
+      background: var(--bg);
+      height: 110px;
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .pos-box {
+      width: 64px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-family: var(--mono);
+      font-weight: 500;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .pos-static {
+      background: rgba(0, 184, 255, 0.15);
+      border: 1px solid rgba(0, 184, 255, 0.4);
+      color: var(--accent2);
+      position: static;
+    }
+
+    .pos-relative {
+      background: rgba(255, 171, 112, 0.15);
+      border: 1px solid rgba(255, 171, 112, 0.4);
+      color: #ffab70;
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+
+    .pos-absolute {
+      background: rgba(255, 107, 107, 0.15);
+      border: 1px solid rgba(255, 107, 107, 0.4);
+      color: var(--accent3);
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    .pos-sticky-demo {
+      background: rgba(0, 229, 160, 0.12);
+      border-bottom: 1px solid rgba(0, 229, 160, 0.25);
+      color: var(--accent);
+      font-size: 9px;
+      font-family: var(--mono);
+      padding: 5px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .scroll-area {
+      height: 80px;
+      overflow-y: auto;
+      background: var(--bg);
+      font-size: 10px;
+      font-family: var(--mono);
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
 
     /* ═══ SEC 4 — Display ═══ */
-    .disp-block        { display: block; background: rgba(0,184,255,0.07); border: 1px solid rgba(0,184,255,0.25); color: var(--accent2); padding: 4px 8px; margin: 3px 0; font-size: 10px; font-family: var(--mono); border-radius: 3px; }
-    .disp-inline       { display: inline; background: rgba(255,171,112,0.08); border: 1px solid rgba(255,171,112,0.25); color: #ffab70; padding: 2px 6px; font-size: 10px; font-family: var(--mono); border-radius: 3px; }
-    .disp-inline-block { display: inline-block; background: rgba(0,229,160,0.07); border: 1px solid rgba(0,229,160,0.25); color: var(--accent); padding: 4px 10px; width: 68px; text-align: center; font-size: 10px; font-family: var(--mono); border-radius: 3px; }
-    .center-demo { background: var(--bg); width: 100%; height: 68px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 6px; }
-    .center-box  { background: var(--accent); color: #000; padding: 7px 16px; font-size: 10px; font-family: var(--mono); font-weight: 500; border-radius: 4px; }
+    .disp-block {
+      display: block;
+      background: rgba(0, 184, 255, 0.07);
+      border: 1px solid rgba(0, 184, 255, 0.25);
+      color: var(--accent2);
+      padding: 4px 8px;
+      margin: 3px 0;
+      font-size: 10px;
+      font-family: var(--mono);
+      border-radius: 3px;
+    }
+
+    .disp-inline {
+      display: inline;
+      background: rgba(255, 171, 112, 0.08);
+      border: 1px solid rgba(255, 171, 112, 0.25);
+      color: #ffab70;
+      padding: 2px 6px;
+      font-size: 10px;
+      font-family: var(--mono);
+      border-radius: 3px;
+    }
+
+    .disp-inline-block {
+      display: inline-block;
+      background: rgba(0, 229, 160, 0.07);
+      border: 1px solid rgba(0, 229, 160, 0.25);
+      color: var(--accent);
+      padding: 4px 10px;
+      width: 68px;
+      text-align: center;
+      font-size: 10px;
+      font-family: var(--mono);
+      border-radius: 3px;
+    }
+
+    .center-demo {
+      background: var(--bg);
+      width: 100%;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .center-box {
+      background: var(--accent);
+      color: #000;
+      padding: 7px 16px;
+      font-size: 10px;
+      font-family: var(--mono);
+      font-weight: 500;
+      border-radius: 4px;
+    }
 
     /* ═══ SEC 5 — Flex ═══ */
-    .flex-demo { display: flex; gap: 6px; background: var(--bg); padding: 9px; border: 1px solid var(--border); border-radius: 6px; min-height: 46px; flex-wrap: wrap; }
-    .flex-item { background: linear-gradient(135deg,rgba(0,184,255,0.2),rgba(0,229,160,0.15)); border: 1px solid rgba(0,229,160,0.2); color: var(--accent); padding: 5px 12px; font-size: 10px; font-family: var(--mono); font-weight: 500; border-radius: 4px; flex-shrink: 0; }
-    .flex-jc-center  { justify-content: center; }
-    .flex-jc-between { justify-content: space-between; }
-    .flex-jc-end     { justify-content: flex-end; }
-    .flex-ai-center  { align-items: center; height: 62px; }
-    .flex-dir-col    { flex-direction: column; height: 90px; }
+    .flex-demo {
+      display: flex;
+      gap: 6px;
+      background: var(--bg);
+      padding: 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      min-height: 46px;
+      flex-wrap: wrap;
+    }
 
-    /* ═══ SEC 6 — Box model ═══ */
-    .box-model-diagram { background: var(--surface2); padding: 12px; border: 1px solid var(--border); border-radius: var(--radius); text-align: center; font-family: var(--mono); font-size: 10px; }
-    .margin-box  { background: rgba(255,217,61,0.04);  border: 1px dashed rgba(255,217,61,0.35);   padding: 8px; border-radius: 4px; }
-    .border-box2 { background: rgba(0,184,255,0.04);   border: 3px solid rgba(0,184,255,0.35);     padding: 8px; border-radius: 4px; margin: 5px 0; }
-    .padding-box { background: rgba(0,229,160,0.04);   border: 1px dashed rgba(0,229,160,0.35);   padding: 8px; border-radius: 4px; }
-    .content-box { background: rgba(0,229,160,0.12);   border: 1px solid rgba(0,229,160,0.25);    color: var(--accent); padding: 7px; border-radius: 4px; font-weight: 500; }
-    .box-tag { font-size: 8px; color: var(--text-dim); display: block; text-align: left; margin-bottom: 3px; }
+    .flex-item {
+      background: linear-gradient(135deg, rgba(0, 184, 255, 0.2), rgba(0, 229, 160, 0.15));
+      border: 1px solid rgba(0, 229, 160, 0.2);
+      color: var(--accent);
+      padding: 5px 12px;
+      font-size: 10px;
+      font-family: var(--mono);
+      font-weight: 500;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .flex-jc-center {
+      justify-content: center;
+    }
+
+    .flex-jc-between {
+      justify-content: space-between;
+    }
+
+    .flex-jc-end {
+      justify-content: flex-end;
+    }
+
+    .flex-ai-center {
+      align-items: center;
+      height: 62px;
+    }
+
+    .flex-dir-col {
+      flex-direction: column;
+      height: 90px;
+    }
 
     /* ═══ SEC 7 — BG ═══ */
-    .bg-demo { width: 100%; height: 76px; position: relative; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg,#0a1628,#0d2140,#1a3a5c); }
-    .bg-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-    .bg-text { position: relative; color: #fff; font-size: 11px; font-family: var(--mono); text-align: center; z-index: 1; }
+    .bg-demo {
+      width: 100%;
+      height: 76px;
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0a1628, #0d2140, #1a3a5c);
+    }
+
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .bg-text {
+      position: relative;
+      color: #fff;
+      font-size: 11px;
+      font-family: var(--mono);
+      text-align: center;
+      z-index: 1;
+    }
 
     /* ═══ SEC 8 — Typo ═══ */
-    .typo-row { border-bottom: 1px solid var(--border); padding: 8px 0; display: grid; grid-template-columns: 145px 1fr 200px; gap: 10px; align-items: center; }
-    .typo-prop { font-family: var(--mono); color: var(--accent2); font-size: 11px; }
-    .typo-example { color: var(--text-dim); font-size: 10px; font-family: var(--mono); }
+    .typo-row {
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      display: grid;
+      grid-template-columns: 145px 1fr 200px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .typo-prop {
+      font-family: var(--mono);
+      color: var(--accent2);
+      font-size: 11px;
+    }
+
+    .typo-example {
+      color: var(--text-dim);
+      font-size: 10px;
+      font-family: var(--mono);
+    }
 
     /* ═══ SEC 9 — Buttons ═══ */
-    .btn-demo-area { display: flex; gap: 14px; flex-wrap: wrap; padding: 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); align-items: center; }
+    .btn-demo-area {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      align-items: center;
+    }
 
     .btn-primary {
-      background: var(--accent); color: #000;
-      border: none; padding: 10px 22px;
-      font-family: var(--mono); font-size: 11px; font-weight: 500;
-      cursor: pointer; text-transform: uppercase; letter-spacing: 0.1em;
-      transition: all 0.2s; text-decoration: none; display: inline-block; border-radius: 5px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 10px 22px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
     }
-    .btn-primary:hover { background: #00ffb3; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,229,160,0.25); }
+
+    .btn-primary:hover {
+      background: #00ffb3;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 229, 160, 0.25);
+    }
 
     .btn-outline {
-      background: transparent; color: var(--accent2);
-      border: 1px solid rgba(0,184,255,0.35); padding: 9px 20px;
-      font-family: var(--mono); font-size: 11px; cursor: pointer;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      transition: all 0.2s; text-decoration: none; display: inline-block; border-radius: 5px;
+      background: transparent;
+      color: var(--accent2);
+      border: 1px solid rgba(0, 184, 255, 0.35);
+      padding: 9px 20px;
+      font-family: var(--mono);
+      font-size: 11px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
     }
-    .btn-outline:hover { background: rgba(0,184,255,0.08); border-color: var(--accent2); }
 
-    .link-demo { color: var(--accent2); text-decoration: underline; cursor: pointer; transition: color 0.2s; font-family: var(--mono); font-size: 12px; }
-    .link-demo:hover { color: var(--accent); }
+    .btn-outline:hover {
+      background: rgba(0, 184, 255, 0.08);
+      border-color: var(--accent2);
+    }
+
+    .link-demo {
+      color: var(--accent2);
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.2s;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .link-demo:hover {
+      color: var(--accent);
+    }
   </style>
 </head>
+
 <body>
 
   <aside class="sidebar">
@@ -448,10 +854,7 @@
       <a href="#sec2"><span class="nav-num">02</span> Layout Principal</a>
       <div class="nav-group-label">posicionamento</div>
       <a href="#sec3"><span class="nav-num">03</span> Position</a>
-      <a href="#sec4"><span class="nav-num">04</span> Display</a>
-      <a href="#sec5"><span class="nav-num">05</span> Flexbox</a>
       <div class="nav-group-label">estilos</div>
-      <a href="#sec6"><span class="nav-num">06</span> Box Model</a>
       <a href="#sec7"><span class="nav-num">07</span> Backgrounds</a>
       <a href="#sec8"><span class="nav-num">08</span> Tipografia</a>
       <a href="#sec9"><span class="nav-num">09</span> Botões &amp; Links</a>
@@ -480,38 +883,87 @@
 
       <div class="code-label">// esqueleto mínimo obrigatório</div>
       <div class="code-block"><span class="cc">&lt;!-- DOCTYPE — diz ao browser que é HTML5 --&gt;</span>
-<span class="cp">&lt;!</span><span class="ct">DOCTYPE</span> <span class="ck">html</span><span class="cp">&gt;</span>
-<span class="cp">&lt;</span><span class="ct">html</span> <span class="ck">lang</span><span class="cp">=</span><span class="cv">"pt-BR"</span><span class="cp">&gt;</span>
-<span class="cp">&lt;</span><span class="ct">head</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;</span><span class="ct">meta</span> <span class="ck">charset</span><span class="cp">=</span><span class="cv">"UTF-8"</span><span class="cp">&gt;</span>
+        <span class="cp">&lt;!</span><span class="ct">DOCTYPE</span> <span class="ck">html</span><span
+          class="cp">&gt;</span>
+        <span class="cp">&lt;</span><span class="ct">html</span> <span class="ck">lang</span><span
+          class="cp">=</span><span class="cv">"pt-BR"</span><span class="cp">&gt;</span>
+        <span class="cp">&lt;</span><span class="ct">head</span><span class="cp">&gt;</span>
+        <span class="cp">&lt;</span><span class="ct">meta</span> <span class="ck">charset</span><span
+          class="cp">=</span><span class="cv">"UTF-8"</span><span class="cp">&gt;</span>
 
-  <span class="cc">&lt;!-- ESSENCIAL para responsividade --&gt;</span>
-  <span class="cp">&lt;</span><span class="ct">meta</span> <span class="ck">name</span><span class="cp">=</span><span class="cv">"viewport"</span> <span class="ck">content</span><span class="cp">=</span><span class="cv">"width=device-width, initial-scale=1.0"</span><span class="cp">&gt;</span>
+        <span class="cc">&lt;!-- ESSENCIAL para responsividade --&gt;</span>
+        <span class="cp">&lt;</span><span class="ct">meta</span> <span class="ck">name</span><span
+          class="cp">=</span><span class="cv">"viewport"</span> <span class="ck">content</span><span
+          class="cp">=</span><span class="cv">"width=device-width, initial-scale=1.0"</span><span class="cp">&gt;</span>
 
-  <span class="cp">&lt;</span><span class="ct">title</span><span class="cp">&gt;</span>Título<span class="cp">&lt;/</span><span class="ct">title</span><span class="cp">&gt;</span>
+        <span class="cp">&lt;</span><span class="ct">title</span><span class="cp">&gt;</span>Título<span
+          class="cp">&lt;/</span><span class="ct">title</span><span class="cp">&gt;</span>
 
-  <span class="cc">&lt;!-- CSS externo --&gt;</span>
-  <span class="cp">&lt;</span><span class="ct">link</span> <span class="ck">rel</span><span class="cp">=</span><span class="cv">"stylesheet"</span> <span class="ck">href</span><span class="cp">=</span><span class="cv">"style.css"</span><span class="cp">&gt;</span>
-<span class="cp">&lt;/</span><span class="ct">head</span><span class="cp">&gt;</span>
-<span class="cp">&lt;</span><span class="ct">body</span><span class="cp">&gt;</span>
+        <span class="cc">&lt;!-- CSS externo --&gt;</span>
+        <span class="cp">&lt;</span><span class="ct">link</span> <span class="ck">rel</span><span
+          class="cp">=</span><span class="cv">"stylesheet"</span> <span class="ck">href</span><span
+          class="cp">=</span><span class="cv">"style.css"</span><span class="cp">&gt;</span>
+        <span class="cp">&lt;/</span><span class="ct">head</span><span class="cp">&gt;</span>
+        <span class="cp">&lt;</span><span class="ct">body</span><span class="cp">&gt;</span>
 
-  <span class="cc">&lt;!-- conteúdo visível aqui --&gt;</span>
+        <span class="cc">&lt;!-- conteúdo visível aqui --&gt;</span>
 
-<span class="cp">&lt;/</span><span class="ct">body</span><span class="cp">&gt;</span>
-<span class="cp">&lt;/</span><span class="ct">html</span><span class="cp">&gt;</span></div>
+        <span class="cp">&lt;/</span><span class="ct">body</span><span class="cp">&gt;</span>
+        <span class="cp">&lt;/</span><span class="ct">html</span><span class="cp">&gt;</span>
+      </div>
 
       <div class="subsection">// tags semânticas</div>
       <table class="struct-table">
-        <tr><th>Tag</th><th>Para que serve</th><th>Observação</th></tr>
-        <tr><td class="tag">&lt;header&gt;</td><td>Cabeçalho da página</td><td>Logo + nav</td></tr>
-        <tr><td class="tag">&lt;nav&gt;</td><td>Bloco de navegação</td><td>Links de menu</td></tr>
-        <tr><td class="tag">&lt;main&gt;</td><td>Conteúdo principal</td><td>Só um por página</td></tr>
-        <tr><td class="tag">&lt;section&gt;</td><td>Seção temática</td><td>Tem heading dentro</td></tr>
-        <tr><td class="tag">&lt;article&gt;</td><td>Conteúdo independente</td><td>Post, card, notícia</td></tr>
-        <tr><td class="tag">&lt;aside&gt;</td><td>Conteúdo lateral</td><td>Sidebar, widget</td></tr>
-        <tr><td class="tag">&lt;footer&gt;</td><td>Rodapé da página</td><td>Copyright, links</td></tr>
-        <tr><td class="tag">&lt;div&gt;</td><td>Container genérico</td><td>Quando nada semântico encaixa</td></tr>
-        <tr><td class="tag">&lt;span&gt;</td><td>Inline genérico</td><td>Estilizar trecho de texto</td></tr>
+        <tr>
+          <th>Tag</th>
+          <th>Para que serve</th>
+          <th>Observação</th>
+        </tr>
+        <tr>
+          <td class="tag">&lt;header&gt;</td>
+          <td>Cabeçalho da página</td>
+          <td>Logo + nav</td>
+        </tr>
+        <tr>
+          <td class="tag">&lt;nav&gt;</td>
+          <td>Bloco de navegação</td>
+          <td>Links de menu</td>
+        </tr>
+        <tr>
+          <td class="tag">&lt;main&gt;</td>
+          <td>Conteúdo principal</td>
+          <td>Só um por página</td>
+        </tr>
+        <tr>
+          <td class="tag">&lt;section&gt;</td>
+          <td>Seção temática</td>
+          <td>Tem heading dentro</td>
+        </tr>
+        <tr>
+          <td class="tag">&lt;article&gt;</td>
+          <td>Conteúdo independente</td>
+          <td>Post, card, notícia</td>
+        </tr>
+        <tr>
+          <td class="tag">&lt;aside&gt;</td>
+          <td>Conteúdo lateral</td>
+          <td>Sidebar, widget</td>
+        </tr>
+        <tr>
+          <td class="tag">&lt;footer&gt;</td>
+          <td>Rodapé da página</td>
+          <td>Copyright, links</td>
+        </tr>
+        <tr>
+          <td class="tag">&lt;div&gt;</td>
+          <td>Container genérico</td>
+          <td>Quando nada semântico encaixa</td>
+        </tr>
+        <tr>
+          <td class="tag">&lt;span&gt;</td>
+          <td>Inline genérico</td>
+          <td>Estilizar trecho de texto</td>
+        </tr>
       </table>
     </section>
 
@@ -527,15 +979,19 @@
         <div class="ld-nav"><span>&lt;nav&gt;</span><span>Home | Sobre | Serviços | Contato</span></div>
         <div class="ld-hero">
           <div class="ld-container" style="padding:12px 10px;">
-            <span style="color:var(--text-dim);font-size:9px;">&lt;section class="hero"&gt; — background-image / gradient</span><br>
+            <span style="color:var(--text-dim);font-size:9px;">&lt;section class="hero"&gt; — background-image /
+              gradient</span><br>
             <span style="font-size:13px;color:var(--text);font-weight:600;">Título Principal + Botão CTA</span>
           </div>
         </div>
         <div class="ld-section">
           <div class="ld-container">
-            <span style="font-size:9px;color:var(--text-dim);">&lt;section&gt; — .container limita largura (bordas verdes)</span>
+            <span style="font-size:9px;color:var(--text-dim);">&lt;section&gt; — .container limita largura (bordas
+              verdes)</span>
             <div class="ld-cols">
-              <div class="ld-col">col</div><div class="ld-col">col</div><div class="ld-col">col</div>
+              <div class="ld-col">col</div>
+              <div class="ld-col">col</div>
+              <div class="ld-col">col</div>
             </div>
           </div>
         </div>
@@ -546,62 +1002,98 @@
         <div>
           <div class="code-label">// HTML estrutural</div>
           <div class="code-block"><span class="cp">&lt;</span><span class="ct">header</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"container"</span><span class="cp">&gt;</span>
-    <span class="cp">&lt;</span><span class="ct">a</span> <span class="ck">href</span><span class="cp">=</span><span class="cv">"#"</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"logo"</span><span class="cp">&gt;</span>Logo<span class="cp">&lt;/</span><span class="ct">a</span><span class="cp">&gt;</span>
-    <span class="cp">&lt;</span><span class="ct">nav</span><span class="cp">&gt;</span>
-      <span class="cp">&lt;</span><span class="ct">a</span> <span class="ck">href</span><span class="cp">=</span><span class="cv">"#"</span><span class="cp">&gt;</span>Home<span class="cp">&lt;/</span><span class="ct">a</span><span class="cp">&gt;</span>
-      <span class="cp">&lt;</span><span class="ct">a</span> <span class="ck">href</span><span class="cp">=</span><span class="cv">"#sobre"</span><span class="cp">&gt;</span>Sobre<span class="cp">&lt;/</span><span class="ct">a</span><span class="cp">&gt;</span>
-    <span class="cp">&lt;/</span><span class="ct">nav</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
-<span class="cp">&lt;/</span><span class="ct">header</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span
+              class="cp">=</span><span class="cv">"container"</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">a</span> <span class="ck">href</span><span
+              class="cp">=</span><span class="cv">"#"</span> <span class="ck">class</span><span class="cp">=</span><span
+              class="cv">"logo"</span><span class="cp">&gt;</span>Logo<span class="cp">&lt;/</span><span
+              class="ct">a</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">nav</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">a</span> <span class="ck">href</span><span
+              class="cp">=</span><span class="cv">"#"</span><span class="cp">&gt;</span>Home<span
+              class="cp">&lt;/</span><span class="ct">a</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">a</span> <span class="ck">href</span><span
+              class="cp">=</span><span class="cv">"#sobre"</span><span class="cp">&gt;</span>Sobre<span
+              class="cp">&lt;/</span><span class="ct">a</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;/</span><span class="ct">nav</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;/</span><span class="ct">header</span><span class="cp">&gt;</span>
 
-<span class="cp">&lt;</span><span class="ct">section</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"hero"</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"container"</span><span class="cp">&gt;</span>
-    <span class="cp">&lt;</span><span class="ct">h1</span><span class="cp">&gt;</span>Título<span class="cp">&lt;/</span><span class="ct">h1</span><span class="cp">&gt;</span>
-    <span class="cp">&lt;</span><span class="ct">a</span> <span class="ck">href</span><span class="cp">=</span><span class="cv">"#"</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"btn"</span><span class="cp">&gt;</span>CTA<span class="cp">&lt;/</span><span class="ct">a</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
-<span class="cp">&lt;/</span><span class="ct">section</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">section</span> <span class="ck">class</span><span
+              class="cp">=</span><span class="cv">"hero"</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span
+              class="cp">=</span><span class="cv">"container"</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">h1</span><span class="cp">&gt;</span>Título<span
+              class="cp">&lt;/</span><span class="ct">h1</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">a</span> <span class="ck">href</span><span
+              class="cp">=</span><span class="cv">"#"</span> <span class="ck">class</span><span class="cp">=</span><span
+              class="cv">"btn"</span><span class="cp">&gt;</span>CTA<span class="cp">&lt;/</span><span
+              class="ct">a</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;/</span><span class="ct">section</span><span class="cp">&gt;</span>
 
-<span class="cp">&lt;</span><span class="ct">section</span> <span class="ck">id</span><span class="cp">=</span><span class="cv">"sobre"</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"container"</span><span class="cp">&gt;</span><span class="cp">&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
-<span class="cp">&lt;/</span><span class="ct">section</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">section</span> <span class="ck">id</span><span
+              class="cp">=</span><span class="cv">"sobre"</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span
+              class="cp">=</span><span class="cv">"container"</span><span class="cp">&gt;</span><span
+              class="cp">&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;/</span><span class="ct">section</span><span class="cp">&gt;</span>
 
-<span class="cp">&lt;</span><span class="ct">footer</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"container"</span><span class="cp">&gt;</span>
-    <span class="cp">&lt;</span><span class="ct">p</span><span class="cp">&gt;</span>&amp;copy; 2024<span class="cp">&lt;/</span><span class="ct">p</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
-<span class="cp">&lt;/</span><span class="ct">footer</span><span class="cp">&gt;</span></div>
+            <span class="cp">&lt;</span><span class="ct">footer</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span
+              class="cp">=</span><span class="cv">"container"</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">p</span><span class="cp">&gt;</span>&amp;copy; 2024<span
+              class="cp">&lt;/</span><span class="ct">p</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;/</span><span class="ct">footer</span><span class="cp">&gt;</span>
+          </div>
         </div>
         <div>
           <div class="code-label">// CSS header + nav + container</div>
           <div class="code-block"><span class="ct">header</span> <span class="cp">{</span>
-  <span class="ck">background</span><span class="cp">:</span> <span class="cv">#1a1a2e</span><span class="cp">;</span>
-  <span class="ck">padding</span><span class="cp">:</span>    <span class="cv">16px 0</span><span class="cp">;</span>
-  <span class="ck">position</span><span class="cp">:</span>   <span class="cv">sticky</span><span class="cp">;</span>
-  <span class="ck">top</span><span class="cp">:</span>        <span class="cv">0</span><span class="cp">;</span>
-  <span class="ck">z-index</span><span class="cp">:</span>    <span class="cv">100</span><span class="cp">;</span>
-<span class="cp">}</span>
+            <span class="ck">background</span><span class="cp">:</span> <span class="cv">#1a1a2e</span><span
+              class="cp">;</span>
+            <span class="ck">padding</span><span class="cp">:</span> <span class="cv">16px 0</span><span
+              class="cp">;</span>
+            <span class="ck">position</span><span class="cp">:</span> <span class="cv">sticky</span><span
+              class="cp">;</span>
+            <span class="ck">top</span><span class="cp">:</span> <span class="cv">0</span><span class="cp">;</span>
+            <span class="ck">z-index</span><span class="cp">:</span> <span class="cv">100</span><span
+              class="cp">;</span>
+            <span class="cp">}</span>
 
-<span class="ct">header .container</span> <span class="cp">{</span>
-  <span class="ck">display</span><span class="cp">:</span>         <span class="cv">flex</span><span class="cp">;</span>
-  <span class="ck">justify-content</span><span class="cp">:</span> <span class="cv">space-between</span><span class="cp">;</span>
-  <span class="ck">align-items</span><span class="cp">:</span>     <span class="cv">center</span><span class="cp">;</span>
-<span class="cp">}</span>
+            <span class="ct">header .container</span> <span class="cp">{</span>
+            <span class="ck">display</span><span class="cp">:</span> <span class="cv">flex</span><span
+              class="cp">;</span>
+            <span class="ck">justify-content</span><span class="cp">:</span> <span class="cv">space-between</span><span
+              class="cp">;</span>
+            <span class="ck">align-items</span><span class="cp">:</span> <span class="cv">center</span><span
+              class="cp">;</span>
+            <span class="cp">}</span>
 
-<span class="ct">nav a</span> <span class="cp">{</span>
-  <span class="ck">color</span><span class="cp">:</span>           <span class="cv">#fff</span><span class="cp">;</span>
-  <span class="ck">text-decoration</span><span class="cp">:</span> <span class="cv">none</span><span class="cp">;</span>
-  <span class="ck">margin-left</span><span class="cp">:</span>     <span class="cv">24px</span><span class="cp">;</span>
-  <span class="ck">transition</span><span class="cp">:</span>      <span class="cv">color 0.2s</span><span class="cp">;</span>
-<span class="cp">}</span>
-<span class="ct">nav a</span><span class="cp">:</span><span class="ck">hover</span> <span class="cp">{</span> <span class="ck">color</span><span class="cp">:</span> <span class="cv">#00e5a0</span><span class="cp">; </span><span class="cp">}</span>
+            <span class="ct">nav a</span> <span class="cp">{</span>
+            <span class="ck">color</span><span class="cp">:</span> <span class="cv">#fff</span><span class="cp">;</span>
+            <span class="ck">text-decoration</span><span class="cp">:</span> <span class="cv">none</span><span
+              class="cp">;</span>
+            <span class="ck">margin-left</span><span class="cp">:</span> <span class="cv">24px</span><span
+              class="cp">;</span>
+            <span class="ck">transition</span><span class="cp">:</span> <span class="cv">color 0.2s</span><span
+              class="cp">;</span>
+            <span class="cp">}</span>
+            <span class="ct">nav a</span><span class="cp">:</span><span class="ck">hover</span> <span
+              class="cp">{</span> <span class="ck">color</span><span class="cp">:</span> <span
+              class="cv">#00e5a0</span><span class="cp">; </span><span class="cp">}</span>
 
-<span class="cc">/* Container padrão */</span>
-<span class="ct">.container</span> <span class="cp">{</span>
-  <span class="ck">max-width</span><span class="cp">:</span> <span class="cv">1100px</span><span class="cp">;</span>
-  <span class="ck">margin</span><span class="cp">:</span>    <span class="cv">0 auto</span><span class="cp">;</span>
-  <span class="ck">padding</span><span class="cp">:</span>   <span class="cv">0 20px</span><span class="cp">;</span>
-<span class="cp">}</span></div>
+            <span class="cc">/* Container padrão */</span>
+            <span class="ct">.container</span> <span class="cp">{</span>
+            <span class="ck">max-width</span><span class="cp">:</span> <span class="cv">1100px</span><span
+              class="cp">;</span>
+            <span class="ck">margin</span><span class="cp">:</span> <span class="cv">0 auto</span><span
+              class="cp">;</span>
+            <span class="ck">padding</span><span class="cp">:</span> <span class="cv">0 20px</span><span
+              class="cp">;</span>
+            <span class="cp">}</span>
+          </div>
         </div>
       </div>
     </section>
@@ -613,15 +1105,20 @@
         <h2 class="section-title">Position</h2>
       </div>
 
-      <div class="callout">⚠ <strong>position: absolute</strong> posiciona no pai mais próximo com position ≠ static. Sem esse pai → vai para o &lt;body&gt;.</div>
+      <div class="callout">⚠ <strong>position: absolute</strong> posiciona no pai mais próximo com position ≠ static.
+        Sem esse pai → vai para o &lt;body&gt;.</div>
 
       <div class="card-grid mt10">
         <div class="card">
           <div class="card-label">static — padrão</div>
           <div class="card-body">
             <p class="card-note">Fluxo normal. top/left NÃO funcionam.</p>
-            <div class="demo"><div class="pos-box pos-static">STATIC</div><span class="demo-label">preview</span></div>
-            <div class="code-block"><span class="ct">.box</span> <span class="cp">{</span> <span class="ck">position</span><span class="cp">:</span> <span class="cv">static</span><span class="cp">; </span><span class="cp">}</span> <span class="cc">/* default */</span></div>
+            <div class="demo">
+              <div class="pos-box pos-static">STATIC</div><span class="demo-label">preview</span>
+            </div>
+            <div class="code-block"><span class="ct">.box</span> <span class="cp">{</span> <span
+                class="ck">position</span><span class="cp">:</span> <span class="cv">static</span><span class="cp">;
+              </span><span class="cp">}</span> <span class="cc">/* default */</span></div>
           </div>
         </div>
 
@@ -629,12 +1126,18 @@
           <div class="card-label">relative</div>
           <div class="card-body">
             <p class="card-note">Ocupa espaço original. top/left empurram visualmente. Cria contexto para absolute.</p>
-            <div class="demo"><div class="pos-box pos-relative">RELATIVE<br><span style="font-size:8px;">top:10 left:10</span></div><span class="demo-label">preview</span></div>
+            <div class="demo">
+              <div class="pos-box pos-relative">RELATIVE<br><span style="font-size:8px;">top:10 left:10</span></div>
+              <span class="demo-label">preview</span>
+            </div>
             <div class="code-block"><span class="ct">.box</span> <span class="cp">{</span>
-  <span class="ck">position</span><span class="cp">:</span> <span class="cv">relative</span><span class="cp">;</span>
-  <span class="ck">top</span><span class="cp">:</span>      <span class="cv">10px</span><span class="cp">;</span>
-  <span class="ck">left</span><span class="cp">:</span>     <span class="cv">10px</span><span class="cp">;</span>
-<span class="cp">}</span></div>
+              <span class="ck">position</span><span class="cp">:</span> <span class="cv">relative</span><span
+                class="cp">;</span>
+              <span class="ck">top</span><span class="cp">:</span> <span class="cv">10px</span><span class="cp">;</span>
+              <span class="ck">left</span><span class="cp">:</span> <span class="cv">10px</span><span
+                class="cp">;</span>
+              <span class="cp">}</span>
+            </div>
           </div>
         </div>
 
@@ -644,17 +1147,24 @@
             <p class="card-note">Sai do fluxo. Posiciona no pai com position≠static.</p>
             <div class="demo" style="padding:0;">
               <div class="pos-demo-wrap">
-                <div style="background:rgba(255,255,255,0.04);border:1px solid var(--border);width:58px;height:34px;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:var(--mono);color:var(--text-dim);margin:8px;border-radius:4px;">normal</div>
+                <div
+                  style="background:rgba(255,255,255,0.04);border:1px solid var(--border);width:58px;height:34px;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:var(--mono);color:var(--text-dim);margin:8px;border-radius:4px;">
+                  normal</div>
                 <div class="pos-box pos-absolute">ABS<br><span style="font-size:8px;">top:8 right:8</span></div>
               </div>
               <span class="demo-label">preview</span>
             </div>
-            <div class="code-block"><span class="ct">.pai</span>  <span class="cp">{</span> <span class="ck">position</span><span class="cp">:</span> <span class="cv">relative</span><span class="cp">; </span><span class="cp">}</span> <span class="cc">/* obrigatório */</span>
-<span class="ct">.filho</span> <span class="cp">{</span>
-  <span class="ck">position</span><span class="cp">:</span> <span class="cv">absolute</span><span class="cp">;</span>
-  <span class="ck">top</span><span class="cp">:</span>   <span class="cv">10px</span><span class="cp">;</span>
-  <span class="ck">right</span><span class="cp">:</span> <span class="cv">10px</span><span class="cp">;</span>
-<span class="cp">}</span></div>
+            <div class="code-block"><span class="ct">.pai</span> <span class="cp">{</span> <span
+                class="ck">position</span><span class="cp">:</span> <span class="cv">relative</span><span class="cp">;
+              </span><span class="cp">}</span> <span class="cc">/* obrigatório */</span>
+              <span class="ct">.filho</span> <span class="cp">{</span>
+              <span class="ck">position</span><span class="cp">:</span> <span class="cv">absolute</span><span
+                class="cp">;</span>
+              <span class="ck">top</span><span class="cp">:</span> <span class="cv">10px</span><span class="cp">;</span>
+              <span class="ck">right</span><span class="cp">:</span> <span class="cv">10px</span><span
+                class="cp">;</span>
+              <span class="cp">}</span>
+            </div>
           </div>
         </div>
 
@@ -666,12 +1176,16 @@
               <code style="font-size:10px;color:var(--accent3);">header fixo → position:fixed; top:0; width:100%;</code>
             </div>
             <div class="code-block"><span class="ct">.header-fixo</span> <span class="cp">{</span>
-  <span class="ck">position</span><span class="cp">:</span> <span class="cv">fixed</span><span class="cp">;</span>
-  <span class="ck">top</span><span class="cp">:</span>      <span class="cv">0</span><span class="cp">;</span>
-  <span class="ck">left</span><span class="cp">:</span>     <span class="cv">0</span><span class="cp">;</span>
-  <span class="ck">width</span><span class="cp">:</span>    <span class="cv">100%</span><span class="cp">;</span>
-  <span class="ck">z-index</span><span class="cp">:</span>  <span class="cv">999</span><span class="cp">;</span>
-<span class="cp">}</span></div>
+              <span class="ck">position</span><span class="cp">:</span> <span class="cv">fixed</span><span
+                class="cp">;</span>
+              <span class="ck">top</span><span class="cp">:</span> <span class="cv">0</span><span class="cp">;</span>
+              <span class="ck">left</span><span class="cp">:</span> <span class="cv">0</span><span class="cp">;</span>
+              <span class="ck">width</span><span class="cp">:</span> <span class="cv">100%</span><span
+                class="cp">;</span>
+              <span class="ck">z-index</span><span class="cp">:</span> <span class="cv">999</span><span
+                class="cp">;</span>
+              <span class="cp">}</span>
+            </div>
           </div>
         </div>
 
@@ -690,11 +1204,14 @@
               <span class="demo-label">preview</span>
             </div>
             <div class="code-block"><span class="ct">.nav</span> <span class="cp">{</span>
-  <span class="ck">position</span><span class="cp">:</span> <span class="cv">sticky</span><span class="cp">;</span>
-  <span class="ck">top</span><span class="cp">:</span>      <span class="cv">0</span><span class="cp">;</span>
-  <span class="ck">z-index</span><span class="cp">:</span>  <span class="cv">100</span><span class="cp">;</span>
-<span class="cp">}</span>
-<span class="cc">/* pai não pode ter overflow:hidden */</span></div>
+              <span class="ck">position</span><span class="cp">:</span> <span class="cv">sticky</span><span
+                class="cp">;</span>
+              <span class="ck">top</span><span class="cp">:</span> <span class="cv">0</span><span class="cp">;</span>
+              <span class="ck">z-index</span><span class="cp">:</span> <span class="cv">100</span><span
+                class="cp">;</span>
+              <span class="cp">}</span>
+              <span class="cc">/* pai não pode ter overflow:hidden */</span>
+            </div>
           </div>
         </div>
 
@@ -703,262 +1220,27 @@
           <div class="card-body">
             <p class="card-note">Só funciona com position ≠ static. Maior = na frente.</p>
             <div class="demo" style="height:62px;position:relative;">
-              <div style="position:absolute;width:68px;height:36px;background:rgba(0,184,255,0.15);border:1px solid rgba(0,184,255,0.4);top:6px;left:6px;z-index:1;display:flex;align-items:center;justify-content:center;color:var(--accent2);font-size:9px;font-family:var(--mono);border-radius:4px;">z-index:1</div>
-              <div style="position:absolute;width:68px;height:36px;background:rgba(0,229,160,0.15);border:1px solid rgba(0,229,160,0.4);top:16px;left:38px;z-index:2;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:9px;font-family:var(--mono);border-radius:4px;">z-index:2</div>
+              <div
+                style="position:absolute;width:68px;height:36px;background:rgba(0,184,255,0.15);border:1px solid rgba(0,184,255,0.4);top:6px;left:6px;z-index:1;display:flex;align-items:center;justify-content:center;color:var(--accent2);font-size:9px;font-family:var(--mono);border-radius:4px;">
+                z-index:1</div>
+              <div
+                style="position:absolute;width:68px;height:36px;background:rgba(0,229,160,0.15);border:1px solid rgba(0,229,160,0.4);top:16px;left:38px;z-index:2;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:9px;font-family:var(--mono);border-radius:4px;">
+                z-index:2</div>
               <span class="demo-label">preview</span>
             </div>
             <div class="code-block"><span class="ct">.overlay</span> <span class="cp">{</span>
-  <span class="ck">position</span><span class="cp">:</span> <span class="cv">absolute</span><span class="cp">;</span>
-  <span class="ck">z-index</span><span class="cp">:</span>  <span class="cv">10</span><span class="cp">;</span>
-<span class="cp">}</span></div>
+              <span class="ck">position</span><span class="cp">:</span> <span class="cv">absolute</span><span
+                class="cp">;</span>
+              <span class="ck">z-index</span><span class="cp">:</span> <span class="cv">10</span><span
+                class="cp">;</span>
+              <span class="cp">}</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="callout tip mt10">💡 Centralizar absolute no pai → <code>top:50%; left:50%; transform:translate(-50%,-50%);</code></div>
-    </section>
-
-    <!-- 04 -->
-    <section class="section" id="sec4">
-      <div class="section-header">
-        <span class="section-num">04</span>
-        <h2 class="section-title">Display &amp; Layout</h2>
-      </div>
-
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-label">display: block</div>
-          <div class="card-body">
-            <p class="card-note">Ocupa linha inteira. Aceita width/height/margin/padding.</p>
-            <div class="demo">
-              <div class="disp-block">bloco 1 — ocupa linha toda</div>
-              <div class="disp-block">bloco 2 — nova linha</div>
-              <span class="demo-label">preview</span>
-            </div>
-            <div class="code-block"><span class="cc">/* Nativos block:
-   div, p, h1-h6, section, header, footer */</span>
-<span class="ct">.el</span> <span class="cp">{</span> <span class="ck">display</span><span class="cp">:</span> <span class="cv">block</span><span class="cp">; </span><span class="cp">}</span></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-label">display: inline</div>
-          <div class="card-body">
-            <p class="card-note">Fica na linha. NÃO aceita width/height.</p>
-            <div class="demo">
-              Texto <span class="disp-inline">inline</span> continua <span class="disp-inline">aqui</span> na frase.
-              <span class="demo-label">preview</span>
-            </div>
-            <div class="code-block"><span class="cc">/* Nativos inline: span, a, strong */</span>
-<span class="ct">.el</span> <span class="cp">{</span> <span class="ck">display</span><span class="cp">:</span> <span class="cv">inline</span><span class="cp">; </span><span class="cp">}</span></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-label">display: inline-block</div>
-          <div class="card-body">
-            <p class="card-note">Fica na linha E aceita width/height. Ideal para botões.</p>
-            <div class="demo">
-              <span class="disp-inline-block">box 1</span>
-              <span class="disp-inline-block">box 2</span>
-              <span class="disp-inline-block">box 3</span>
-              <span class="demo-label">preview</span>
-            </div>
-            <div class="code-block"><span class="ct">.btn</span> <span class="cp">{</span>
-  <span class="ck">display</span><span class="cp">:</span> <span class="cv">inline-block</span><span class="cp">;</span>
-  <span class="ck">width</span><span class="cp">:</span>   <span class="cv">80px</span><span class="cp">;</span>
-  <span class="ck">padding</span><span class="cp">:</span> <span class="cv">8px</span><span class="cp">;</span>
-<span class="cp">}</span></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-label">none vs hidden + centralização</div>
-          <div class="card-body">
-            <div class="demo">
-              <div class="center-demo"><div class="center-box">CENTRALIZADO</div></div>
-              <span class="demo-label">preview</span>
-            </div>
-            <div class="code-block"><span class="ct">.hidden</span>    <span class="cp">{</span> <span class="ck">display</span><span class="cp">:</span> <span class="cv">none</span><span class="cp">; </span><span class="cp">}</span>     <span class="cc">/* sai do layout */</span>
-<span class="ct">.invisible</span> <span class="cp">{</span> <span class="ck">visibility</span><span class="cp">:</span> <span class="cv">hidden</span><span class="cp">; </span><span class="cp">}</span> <span class="cc">/* ocupa espaço */</span>
-
-<span class="cc">/* centralizar com flex */</span>
-<span class="ct">.pai</span> <span class="cp">{</span>
-  <span class="ck">display</span><span class="cp">:</span>         <span class="cv">flex</span><span class="cp">;</span>
-  <span class="ck">justify-content</span><span class="cp">:</span> <span class="cv">center</span><span class="cp">;</span>
-  <span class="ck">align-items</span><span class="cp">:</span>     <span class="cv">center</span><span class="cp">;</span>
-  <span class="ck">height</span><span class="cp">:</span>          <span class="cv">200px</span><span class="cp">;</span>
-<span class="cp">}</span>
-<span class="cc">/* centralizar só horizontal */</span>
-<span class="ct">.box</span> <span class="cp">{</span> <span class="ck">max-width</span><span class="cp">:</span> <span class="cv">400px</span><span class="cp">;</span> <span class="ck">margin</span><span class="cp">:</span> <span class="cv">0 auto</span><span class="cp">; </span><span class="cp">}</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 -->
-    <section class="section" id="sec5">
-      <div class="section-header">
-        <span class="section-num">05</span>
-        <h2 class="section-title">Flexbox</h2>
-      </div>
-
-      <div class="callout tip">💡 Flex age no <strong>pai</strong>. Filhos se alinham automaticamente. Sempre declare <code>display:flex</code> no container.</div>
-
-      <div class="subsection mt10">// justify-content — eixo horizontal (por padrão)</div>
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-label">flex-start (default)</div>
-          <div class="card-body">
-            <div class="flex-demo"><div class="flex-item">A</div><div class="flex-item">B</div><div class="flex-item">C</div></div>
-            <div class="code-block"><span class="ck">justify-content</span><span class="cp">:</span> <span class="cv">flex-start</span><span class="cp">;</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-label">center</div>
-          <div class="card-body">
-            <div class="flex-demo flex-jc-center"><div class="flex-item">A</div><div class="flex-item">B</div><div class="flex-item">C</div></div>
-            <div class="code-block"><span class="ck">justify-content</span><span class="cp">:</span> <span class="cv">center</span><span class="cp">;</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-label">space-between</div>
-          <div class="card-body">
-            <div class="flex-demo flex-jc-between"><div class="flex-item">A</div><div class="flex-item">B</div><div class="flex-item">C</div></div>
-            <div class="code-block"><span class="ck">justify-content</span><span class="cp">:</span> <span class="cv">space-between</span><span class="cp">;</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-label">flex-end</div>
-          <div class="card-body">
-            <div class="flex-demo flex-jc-end"><div class="flex-item">A</div><div class="flex-item">B</div><div class="flex-item">C</div></div>
-            <div class="code-block"><span class="ck">justify-content</span><span class="cp">:</span> <span class="cv">flex-end</span><span class="cp">;</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="subsection mt10">// align-items — eixo vertical (por padrão)</div>
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-label">flex-start</div>
-          <div class="card-body">
-            <div class="flex-demo flex-ai-center" style="align-items:flex-start;">
-              <div class="flex-item" style="height:28px;">A</div><div class="flex-item" style="height:46px;">B</div><div class="flex-item" style="height:18px;">C</div>
-            </div>
-            <div class="code-block"><span class="ck">align-items</span><span class="cp">:</span> <span class="cv">flex-start</span><span class="cp">;</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-label">center</div>
-          <div class="card-body">
-            <div class="flex-demo flex-ai-center">
-              <div class="flex-item" style="height:28px;">A</div><div class="flex-item" style="height:46px;">B</div><div class="flex-item" style="height:18px;">C</div>
-            </div>
-            <div class="code-block"><span class="ck">align-items</span><span class="cp">:</span> <span class="cv">center</span><span class="cp">;</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-label">stretch (default)</div>
-          <div class="card-body">
-            <div class="flex-demo flex-ai-center" style="align-items:stretch;">
-              <div class="flex-item" style="height:auto;">A</div><div class="flex-item" style="height:auto;">B</div><div class="flex-item" style="height:auto;">C</div>
-            </div>
-            <div class="code-block"><span class="ck">align-items</span><span class="cp">:</span> <span class="cv">stretch</span><span class="cp">;</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-label">flex-direction: column</div>
-          <div class="card-body">
-            <div class="flex-demo flex-dir-col" style="gap:4px;">
-              <div class="flex-item">A</div><div class="flex-item">B</div>
-            </div>
-            <div class="code-block"><span class="ck">flex-direction</span><span class="cp">:</span> <span class="cv">column</span><span class="cp">;</span>
-<span class="cc">/* row = padrão (horizontal) */</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="subsection mt10">// referência completa</div>
-      <div class="two-col">
-        <div>
-          <div class="code-label">// pai (container)</div>
-          <div class="code-block"><span class="ct">.container</span> <span class="cp">{</span>
-  <span class="ck">display</span><span class="cp">:</span>         <span class="cv">flex</span><span class="cp">;</span>
-  <span class="ck">flex-direction</span><span class="cp">:</span>  <span class="cv">row | column</span><span class="cp">;</span>
-  <span class="ck">justify-content</span><span class="cp">:</span> <span class="cv">flex-start | center
-                  | space-between | flex-end</span><span class="cp">;</span>
-  <span class="ck">align-items</span><span class="cp">:</span>     <span class="cv">stretch | center
-                  | flex-start | flex-end</span><span class="cp">;</span>
-  <span class="ck">flex-wrap</span><span class="cp">:</span>       <span class="cv">nowrap | wrap</span><span class="cp">;</span>
-  <span class="ck">gap</span><span class="cp">:</span>             <span class="cv">16px</span><span class="cp">;</span>
-  <span class="ck">gap</span><span class="cp">:</span>             <span class="cv">12px 20px</span><span class="cp">;</span> <span class="cc">/* row col */</span>
-<span class="cp">}</span></div>
-        </div>
-        <div>
-          <div class="code-label">// filho (item)</div>
-          <div class="code-block"><span class="ct">.item</span> <span class="cp">{</span>
-  <span class="ck">flex</span><span class="cp">:</span>       <span class="cv">1</span><span class="cp">;</span>
-  <span class="cc">/* cresce igualmente (flex-grow:1) */</span>
-
-  <span class="ck">flex</span><span class="cp">:</span>       <span class="cv">0 0 200px</span><span class="cp">;</span>
-  <span class="cc">/* grow shrink basis */</span>
-
-  <span class="ck">align-self</span><span class="cp">:</span> <span class="cv">center</span><span class="cp">;</span>
-  <span class="cc">/* sobrescreve align-items */</span>
-
-  <span class="ck">order</span><span class="cp">:</span>      <span class="cv">2</span><span class="cp">;</span>
-  <span class="cc">/* reordena visualmente */</span>
-<span class="cp">}</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 -->
-    <section class="section" id="sec6">
-      <div class="section-header">
-        <span class="section-num">06</span>
-        <h2 class="section-title">Box Model &amp; Espaçamento</h2>
-      </div>
-
-      <div class="two-col">
-        <div>
-          <div class="box-model-diagram">
-            <div class="margin-box">
-              <span class="box-tag" style="color:#c8a820;">margin — espaço externo</span>
-              <div class="border-box2">
-                <span class="box-tag" style="color:var(--accent2);">border</span>
-                <div class="padding-box">
-                  <span class="box-tag" style="color:var(--accent);">padding — espaço interno</span>
-                  <div class="content-box">CONTENT<br><span style="font-size:9px;opacity:0.7;">width × height</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p style="font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:8px;">↑ Todo elemento tem essas 4 camadas.</p>
-        </div>
-        <div>
-          <div class="code-label">// espaçamento</div>
-          <div class="code-block"><span class="cc">/* MARGIN — espaço FORA */</span>
-<span class="ck">margin</span><span class="cp">:</span> <span class="cv">20px</span><span class="cp">;</span>
-<span class="ck">margin</span><span class="cp">:</span> <span class="cv">10px 20px</span><span class="cp">;</span>         <span class="cc">/* top/btm  lft/rgt */</span>
-<span class="ck">margin</span><span class="cp">:</span> <span class="cv">10px 20px 15px 5px</span><span class="cp">;</span> <span class="cc">/* T R B L */</span>
-<span class="ck">margin</span><span class="cp">:</span> <span class="cv">0 auto</span><span class="cp">;</span>            <span class="cc">/* centraliza */</span>
-
-<span class="cc">/* PADDING — espaço DENTRO */</span>
-<span class="ck">padding</span><span class="cp">:</span>     <span class="cv">20px</span><span class="cp">;</span>
-<span class="ck">padding</span><span class="cp">:</span>     <span class="cv">16px 32px</span><span class="cp">;</span>
-<span class="ck">padding-top</span><span class="cp">:</span> <span class="cv">40px</span><span class="cp">;</span>
-
-<span class="cc">/* BOX-SIZING — SEMPRE USAR */</span>
-<span class="cp">*</span> <span class="cp">{</span> <span class="ck">box-sizing</span><span class="cp">:</span> <span class="cv">border-box</span><span class="cp">; </span><span class="cp">}</span>
-<span class="cc">/* padding e border ficam DENTRO do width */</span>
-
-<span class="ck">overflow</span><span class="cp">:</span>   <span class="cv">hidden | auto | scroll</span><span class="cp">;</span>
-<span class="ck">min-height</span><span class="cp">:</span> <span class="cv">400px</span><span class="cp">;</span>
-<span class="ck">height</span><span class="cp">:</span>     <span class="cv">100vh</span><span class="cp">;</span>   <span class="cc">/* 100% da janela */</span></div>
-          <div class="callout danger mt10">⚠ Sem box-sizing:border-box, padding faz o elemento CRESCER além do width definido.</div>
-        </div>
-      </div>
+      <div class="callout tip mt10">💡 Centralizar absolute no pai →
+        <code>top:50%; left:50%; transform:translate(-50%,-50%);</code></div>
     </section>
 
     <!-- 07 -->
@@ -972,71 +1254,50 @@
         <div class="card">
           <div class="card-label">background-image cover</div>
           <div class="card-body">
-            <div class="demo" style="padding:0;height:70px;background:linear-gradient(135deg,#0a1628,#0d2140,#1a3a5c);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:var(--accent2);font-family:var(--mono);font-size:10px;border-radius:6px;">background-size: cover</div>
+            <div class="demo"
+              style="padding:0;height:70px;background:linear-gradient(135deg,#0a1628,#0d2140,#1a3a5c);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:var(--accent2);font-family:var(--mono);font-size:10px;border-radius:6px;">
+              background-size: cover</div>
             <div class="code-block"><span class="ct">.hero</span> <span class="cp">{</span>
-  <span class="ck">background-image</span><span class="cp">:</span>    <span class="cv">url('bg.jpg')</span><span class="cp">;</span>
-  <span class="ck">background-size</span><span class="cp">:</span>     <span class="cv">cover</span><span class="cp">;</span>
-  <span class="ck">background-position</span><span class="cp">:</span> <span class="cv">center</span><span class="cp">;</span>
-  <span class="ck">background-repeat</span><span class="cp">:</span>   <span class="cv">no-repeat</span><span class="cp">;</span>
-  <span class="ck">height</span><span class="cp">:</span>              <span class="cv">100vh</span><span class="cp">;</span>
-<span class="cp">}</span></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-label">overlay escuro sobre imagem</div>
-          <div class="card-body">
-            <div class="bg-demo">
-              <div class="bg-overlay"></div>
-              <div class="bg-text">Texto sobre overlay<br><span style="font-size:9px;">rgba(0,0,0,0.5)</span></div>
+              <span class="ck">background-image</span><span class="cp">:</span> <span
+                class="cv">url('bg.jpg')</span><span class="cp">;</span>
+              <span class="ck">background-size</span><span class="cp">:</span> <span class="cv">cover</span><span
+                class="cp">;</span>
+              <span class="ck">background-position</span><span class="cp">:</span> <span class="cv">center</span><span
+                class="cp">;</span>
+              <span class="ck">background-repeat</span><span class="cp">:</span> <span class="cv">no-repeat</span><span
+                class="cp">;</span>
+              <span class="ck">height</span><span class="cp">:</span> <span class="cv">100vh</span><span
+                class="cp">;</span>
+              <span class="cp">}</span>
             </div>
-            <div class="code-label">// HTML</div>
-            <div class="code-block"><span class="cp">&lt;</span><span class="ct">section</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"hero"</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"overlay"</span><span class="cp">&gt;&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
-  <span class="cp">&lt;</span><span class="ct">div</span> <span class="ck">class</span><span class="cp">=</span><span class="cv">"content"</span><span class="cp">&gt;</span>Texto<span class="cp">&lt;/</span><span class="ct">div</span><span class="cp">&gt;</span>
-<span class="cp">&lt;/</span><span class="ct">section</span><span class="cp">&gt;</span></div>
-            <div class="code-label">// CSS</div>
-            <div class="code-block"><span class="ct">.hero</span>    <span class="cp">{</span> <span class="ck">position</span><span class="cp">:</span> <span class="cv">relative</span><span class="cp">;</span>
-             <span class="ck">background-image</span><span class="cp">:</span> <span class="cv">url('bg.jpg')</span><span class="cp">;</span>
-             <span class="ck">background-size</span><span class="cp">:</span>  <span class="cv">cover</span><span class="cp">; </span><span class="cp">}</span>
-<span class="ct">.overlay</span> <span class="cp">{</span> <span class="ck">position</span><span class="cp">:</span>   <span class="cv">absolute</span><span class="cp">;</span>
-             <span class="ck">inset</span><span class="cp">:</span>      <span class="cv">0</span><span class="cp">;</span>
-             <span class="ck">background</span><span class="cp">:</span> <span class="cv">rgba(0,0,0,0.5)</span><span class="cp">; </span><span class="cp">}</span>
-<span class="ct">.content</span> <span class="cp">{</span> <span class="ck">position</span><span class="cp">:</span> <span class="cv">relative</span><span class="cp">;</span>
-             <span class="ck">z-index</span><span class="cp">:</span>  <span class="cv">1</span><span class="cp">; </span><span class="cp">}</span></div>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-label">gradients</div>
-          <div class="card-body">
-            <div class="demo" style="padding:0;height:38px;background:linear-gradient(to right,#00e5a0,#00b8ff);border-radius:6px;"></div>
-            <div class="code-block"><span class="ck">background</span><span class="cp">:</span> <span class="cv">linear-gradient(
-  to right, #00e5a0, #00b8ff
-)</span><span class="cp">;</span>
-
-<span class="ck">background</span><span class="cp">:</span> <span class="cv">linear-gradient(
-  135deg, #0a1628 0%, #1a3a5c 100%
-)</span><span class="cp">;</span></div>
-          </div>
-        </div>
-
+      
         <div class="card">
           <div class="card-label">img responsiva</div>
           <div class="card-body">
             <div class="code-block"><span class="ct">.img-resp</span> <span class="cp">{</span>
-  <span class="ck">max-width</span><span class="cp">:</span>       <span class="cv">100%</span><span class="cp">;</span>
-  <span class="ck">height</span><span class="cp">:</span>          <span class="cv">auto</span><span class="cp">;</span>
-  <span class="ck">display</span><span class="cp">:</span>         <span class="cv">block</span><span class="cp">;</span>
-<span class="cp">}</span>
+              <span class="ck">max-width</span><span class="cp">:</span> <span class="cv">100%</span><span
+                class="cp">;</span>
+              <span class="ck">height</span><span class="cp">:</span> <span class="cv">auto</span><span
+                class="cp">;</span>
+              <span class="ck">display</span><span class="cp">:</span> <span class="cv">block</span><span
+                class="cp">;</span>
+              <span class="cp">}</span>
 
-<span class="cc">/* img que preenche caixa */</span>
-<span class="ct">.card-img</span> <span class="cp">{</span>
-  <span class="ck">width</span><span class="cp">:</span>           <span class="cv">100%</span><span class="cp">;</span>
-  <span class="ck">height</span><span class="cp">:</span>          <span class="cv">220px</span><span class="cp">;</span>
-  <span class="ck">object-fit</span><span class="cp">:</span>      <span class="cv">cover</span><span class="cp">;</span>
-  <span class="ck">object-position</span><span class="cp">:</span> <span class="cv">center</span><span class="cp">;</span>
-<span class="cp">}</span></div>
+              <span class="cc">/* img que preenche caixa */</span>
+              <span class="ct">.card-img</span> <span class="cp">{</span>
+              <span class="ck">width</span><span class="cp">:</span> <span class="cv">100%</span><span
+                class="cp">;</span>
+              <span class="ck">height</span><span class="cp">:</span> <span class="cv">220px</span><span
+                class="cp">;</span>
+              <span class="ck">object-fit</span><span class="cp">:</span> <span class="cv">cover</span><span
+                class="cp">;</span>
+              <span class="ck">object-position</span><span class="cp">:</span> <span class="cv">center</span><span
+                class="cp">;</span>
+              <span class="cp">}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1073,7 +1334,8 @@
           </div>
           <div class="typo-row">
             <span class="typo-prop">text-align</span>
-            <span style="display:block;background:var(--surface3);padding:2px 8px;border-radius:3px;color:var(--text-mid);text-align:center;">centro</span>
+            <span
+              style="display:block;background:var(--surface3);padding:2px 8px;border-radius:3px;color:var(--text-mid);text-align:center;">centro</span>
             <span class="typo-example">left / center / right / justify</span>
           </div>
           <div class="typo-row">
@@ -1094,25 +1356,43 @@
         </div>
         <div>
           <div class="code-label">// Google Fonts — link no &lt;head&gt;</div>
-          <div class="code-block"><span class="cp">&lt;</span><span class="ct">link</span> <span class="ck">rel</span><span class="cp">=</span><span class="cv">"preconnect"</span>
-      <span class="ck">href</span><span class="cp">=</span><span class="cv">"https://fonts.googleapis.com"</span><span class="cp">&gt;</span>
-<span class="cp">&lt;</span><span class="ct">link</span> <span class="ck">href</span><span class="cp">=</span><span class="cv">"https://fonts.googleapis.com/css2?
-  family=Roboto:wght@400;700&display=swap"</span>
-  <span class="ck">rel</span><span class="cp">=</span><span class="cv">"stylesheet"</span><span class="cp">&gt;</span></div>
+          <div class="code-block"><span class="cp">&lt;</span><span class="ct">link</span> <span
+              class="ck">rel</span><span class="cp">=</span><span class="cv">"preconnect"</span>
+            <span class="ck">href</span><span class="cp">=</span><span
+              class="cv">"https://fonts.googleapis.com"</span><span class="cp">&gt;</span>
+            <span class="cp">&lt;</span><span class="ct">link</span> <span class="ck">href</span><span
+              class="cp">=</span><span class="cv">"https://fonts.googleapis.com/css2?
+              family=Roboto:wght@400;700&display=swap"</span>
+            <span class="ck">rel</span><span class="cp">=</span><span class="cv">"stylesheet"</span><span
+              class="cp">&gt;</span>
+          </div>
 
           <div class="code-label">// hierarquia típica</div>
           <div class="code-block"><span class="ct">body</span> <span class="cp">{</span>
-  <span class="ck">font-family</span><span class="cp">:</span> <span class="cv">'Roboto', sans-serif</span><span class="cp">;</span>
-  <span class="ck">font-size</span><span class="cp">:</span>   <span class="cv">16px</span><span class="cp">;</span>
-  <span class="ck">line-height</span><span class="cp">:</span> <span class="cv">1.6</span><span class="cp">;</span>
-  <span class="ck">color</span><span class="cp">:</span>       <span class="cv">#333</span><span class="cp">;</span>
-<span class="cp">}</span>
-<span class="ct">h1</span> <span class="cp">{</span> <span class="ck">font-size</span><span class="cp">:</span> <span class="cv">2.5rem</span><span class="cp">;</span> <span class="ck">font-weight</span><span class="cp">:</span> <span class="cv">700</span><span class="cp">; </span><span class="cp">}</span>
-<span class="ct">h2</span> <span class="cp">{</span> <span class="ck">font-size</span><span class="cp">:</span> <span class="cv">2rem</span><span class="cp">;</span>   <span class="ck">font-weight</span><span class="cp">:</span> <span class="cv">600</span><span class="cp">; </span><span class="cp">}</span>
-<span class="ct">h3</span> <span class="cp">{</span> <span class="ck">font-size</span><span class="cp">:</span> <span class="cv">1.5rem</span><span class="cp">; </span><span class="cp">}</span>
-<span class="ct">p</span>  <span class="cp">{</span> <span class="ck">margin-bottom</span><span class="cp">:</span> <span class="cv">1em</span><span class="cp">; </span><span class="cp">}</span></div>
+            <span class="ck">font-family</span><span class="cp">:</span> <span class="cv">'Roboto',
+              sans-serif</span><span class="cp">;</span>
+            <span class="ck">font-size</span><span class="cp">:</span> <span class="cv">16px</span><span
+              class="cp">;</span>
+            <span class="ck">line-height</span><span class="cp">:</span> <span class="cv">1.6</span><span
+              class="cp">;</span>
+            <span class="ck">color</span><span class="cp">:</span> <span class="cv">#333</span><span class="cp">;</span>
+            <span class="cp">}</span>
+            <span class="ct">h1</span> <span class="cp">{</span> <span class="ck">font-size</span><span
+              class="cp">:</span> <span class="cv">2.5rem</span><span class="cp">;</span> <span
+              class="ck">font-weight</span><span class="cp">:</span> <span class="cv">700</span><span class="cp">;
+            </span><span class="cp">}</span>
+            <span class="ct">h2</span> <span class="cp">{</span> <span class="ck">font-size</span><span
+              class="cp">:</span> <span class="cv">2rem</span><span class="cp">;</span> <span
+              class="ck">font-weight</span><span class="cp">:</span> <span class="cv">600</span><span class="cp">;
+            </span><span class="cp">}</span>
+            <span class="ct">h3</span> <span class="cp">{</span> <span class="ck">font-size</span><span
+              class="cp">:</span> <span class="cv">1.5rem</span><span class="cp">; </span><span class="cp">}</span>
+            <span class="ct">p</span> <span class="cp">{</span> <span class="ck">margin-bottom</span><span
+              class="cp">:</span> <span class="cv">1em</span><span class="cp">; </span><span class="cp">}</span>
+          </div>
 
-          <div class="callout tip mt10">💡 <code>rem</code> = relativo ao &lt;html&gt;. 1rem = 16px (padrão). <code>em</code> = relativo ao pai imediato.</div>
+          <div class="callout tip mt10">💡 <code>rem</code> = relativo ao &lt;html&gt;. 1rem = 16px (padrão).
+            <code>em</code> = relativo ao pai imediato.</div>
         </div>
       </div>
     </section>
@@ -1134,83 +1414,189 @@
         <div>
           <div class="code-label">// botão sólido</div>
           <div class="code-block"><span class="ct">.btn</span> <span class="cp">{</span>
-  <span class="ck">display</span><span class="cp">:</span>        <span class="cv">inline-block</span><span class="cp">;</span>
-  <span class="ck">background</span><span class="cp">:</span>     <span class="cv">#00e5a0</span><span class="cp">;</span>
-  <span class="ck">color</span><span class="cp">:</span>          <span class="cv">#000</span><span class="cp">;</span>
-  <span class="ck">padding</span><span class="cp">:</span>        <span class="cv">12px 28px</span><span class="cp">;</span>
-  <span class="ck">text-decoration</span><span class="cp">:</span><span class="cv">none</span><span class="cp">;</span>
-  <span class="ck">border</span><span class="cp">:</span>         <span class="cv">none</span><span class="cp">;</span>
-  <span class="ck">border-radius</span><span class="cp">:</span>  <span class="cv">6px</span><span class="cp">;</span>
-  <span class="ck">cursor</span><span class="cp">:</span>         <span class="cv">pointer</span><span class="cp">;</span>
-  <span class="ck">font-weight</span><span class="cp">:</span>    <span class="cv">600</span><span class="cp">;</span>
-  <span class="ck">transition</span><span class="cp">:</span>     <span class="cv">all 0.2s</span><span class="cp">;</span>
-<span class="cp">}</span>
+            <span class="ck">display</span><span class="cp">:</span> <span class="cv">inline-block</span><span
+              class="cp">;</span>
+            <span class="ck">background</span><span class="cp">:</span> <span class="cv">#00e5a0</span><span
+              class="cp">;</span>
+            <span class="ck">color</span><span class="cp">:</span> <span class="cv">#000</span><span class="cp">;</span>
+            <span class="ck">padding</span><span class="cp">:</span> <span class="cv">12px 28px</span><span
+              class="cp">;</span>
+            <span class="ck">text-decoration</span><span class="cp">:</span><span class="cv">none</span><span
+              class="cp">;</span>
+            <span class="ck">border</span><span class="cp">:</span> <span class="cv">none</span><span
+              class="cp">;</span>
+            <span class="ck">border-radius</span><span class="cp">:</span> <span class="cv">6px</span><span
+              class="cp">;</span>
+            <span class="ck">cursor</span><span class="cp">:</span> <span class="cv">pointer</span><span
+              class="cp">;</span>
+            <span class="ck">font-weight</span><span class="cp">:</span> <span class="cv">600</span><span
+              class="cp">;</span>
+            <span class="ck">transition</span><span class="cp">:</span> <span class="cv">all 0.2s</span><span
+              class="cp">;</span>
+            <span class="cp">}</span>
 
-<span class="ct">.btn</span><span class="cp">:</span><span class="ck">hover</span> <span class="cp">{</span>
-  <span class="ck">transform</span><span class="cp">:</span>  <span class="cv">translateY(-2px)</span><span class="cp">;</span>
-  <span class="ck">box-shadow</span><span class="cp">:</span> <span class="cv">0 6px 20px rgba(0,229,160,0.3)</span><span class="cp">;</span>
-<span class="cp">}</span></div>
+            <span class="ct">.btn</span><span class="cp">:</span><span class="ck">hover</span> <span class="cp">{</span>
+            <span class="ck">transform</span><span class="cp">:</span> <span class="cv">translateY(-2px)</span><span
+              class="cp">;</span>
+            <span class="ck">box-shadow</span><span class="cp">:</span> <span class="cv">0 6px 20px
+              rgba(0,229,160,0.3)</span><span class="cp">;</span>
+            <span class="cp">}</span>
+          </div>
         </div>
         <div>
           <div class="code-label">// botão outline + links</div>
           <div class="code-block"><span class="ct">.btn-outline</span> <span class="cp">{</span>
-  <span class="ck">background</span><span class="cp">:</span>      <span class="cv">transparent</span><span class="cp">;</span>
-  <span class="ck">color</span><span class="cp">:</span>           <span class="cv">#00b8ff</span><span class="cp">;</span>
-  <span class="ck">border</span><span class="cp">:</span>          <span class="cv">1px solid rgba(0,184,255,0.4)</span><span class="cp">;</span>
-  <span class="ck">padding</span><span class="cp">:</span>         <span class="cv">11px 24px</span><span class="cp">;</span>
-  <span class="ck">border-radius</span><span class="cp">:</span>   <span class="cv">6px</span><span class="cp">;</span>
-  <span class="ck">cursor</span><span class="cp">:</span>          <span class="cv">pointer</span><span class="cp">;</span>
-  <span class="ck">transition</span><span class="cp">:</span>      <span class="cv">all 0.2s</span><span class="cp">;</span>
-  <span class="ck">text-decoration</span><span class="cp">:</span> <span class="cv">none</span><span class="cp">;</span>
-<span class="cp">}</span>
-<span class="ct">.btn-outline</span><span class="cp">:</span><span class="ck">hover</span> <span class="cp">{</span>
-  <span class="ck">background</span><span class="cp">:</span> <span class="cv">rgba(0,184,255,0.08)</span><span class="cp">;</span>
-<span class="cp">}</span>
+            <span class="ck">background</span><span class="cp">:</span> <span class="cv">transparent</span><span
+              class="cp">;</span>
+            <span class="ck">color</span><span class="cp">:</span> <span class="cv">#00b8ff</span><span
+              class="cp">;</span>
+            <span class="ck">border</span><span class="cp">:</span> <span class="cv">1px solid
+              rgba(0,184,255,0.4)</span><span class="cp">;</span>
+            <span class="ck">padding</span><span class="cp">:</span> <span class="cv">11px 24px</span><span
+              class="cp">;</span>
+            <span class="ck">border-radius</span><span class="cp">:</span> <span class="cv">6px</span><span
+              class="cp">;</span>
+            <span class="ck">cursor</span><span class="cp">:</span> <span class="cv">pointer</span><span
+              class="cp">;</span>
+            <span class="ck">transition</span><span class="cp">:</span> <span class="cv">all 0.2s</span><span
+              class="cp">;</span>
+            <span class="ck">text-decoration</span><span class="cp">:</span> <span class="cv">none</span><span
+              class="cp">;</span>
+            <span class="cp">}</span>
+            <span class="ct">.btn-outline</span><span class="cp">:</span><span class="ck">hover</span> <span
+              class="cp">{</span>
+            <span class="ck">background</span><span class="cp">:</span> <span
+              class="cv">rgba(0,184,255,0.08)</span><span class="cp">;</span>
+            <span class="cp">}</span>
 
-<span class="cc">/* links de menu */</span>
-<span class="ct">a</span> <span class="cp">{</span>
-  <span class="ck">color</span><span class="cp">:</span>           <span class="cv">#00b8ff</span><span class="cp">;</span>
-  <span class="ck">text-decoration</span><span class="cp">:</span> <span class="cv">none</span><span class="cp">;</span>
-  <span class="ck">transition</span><span class="cp">:</span>      <span class="cv">color 0.2s</span><span class="cp">;</span>
-<span class="cp">}</span>
-<span class="ct">a</span><span class="cp">:</span><span class="ck">hover</span> <span class="cp">{</span> <span class="ck">color</span><span class="cp">:</span> <span class="cv">#00e5a0</span><span class="cp">; </span><span class="cp">}</span></div>
+            <span class="cc">/* links de menu */</span>
+            <span class="ct">a</span> <span class="cp">{</span>
+            <span class="ck">color</span><span class="cp">:</span> <span class="cv">#00b8ff</span><span
+              class="cp">;</span>
+            <span class="ck">text-decoration</span><span class="cp">:</span> <span class="cv">none</span><span
+              class="cp">;</span>
+            <span class="ck">transition</span><span class="cp">:</span> <span class="cv">color 0.2s</span><span
+              class="cp">;</span>
+            <span class="cp">}</span>
+            <span class="ct">a</span><span class="cp">:</span><span class="ck">hover</span> <span class="cp">{</span>
+            <span class="ck">color</span><span class="cp">:</span> <span class="cv">#00e5a0</span><span class="cp">;
+            </span><span class="cp">}</span>
+          </div>
 
           <div class="subsection mt10">// pseudo-classes</div>
           <table class="pseudo-table">
-            <tr><th>Pseudo-classe</th><th>Quando ativa</th></tr>
-            <tr><td class="prop">:hover</td><td>Mouse sobre o elemento</td></tr>
-            <tr><td class="prop">:active</td><td>Durante o clique</td></tr>
-            <tr><td class="prop">:focus</td><td>Campo selecionado (input)</td></tr>
-            <tr><td class="prop">:first-child</td><td>Primeiro filho do pai</td></tr>
-            <tr><td class="prop">:last-child</td><td>Último filho do pai</td></tr>
-            <tr><td class="prop">:nth-child(2)</td><td>Segundo filho</td></tr>
-            <tr><td class="prop">:nth-child(even)</td><td>Filhos pares</td></tr>
+            <tr>
+              <th>Pseudo-classe</th>
+              <th>Quando ativa</th>
+            </tr>
+            <tr>
+              <td class="prop">:hover</td>
+              <td>Mouse sobre o elemento</td>
+            </tr>
+            <tr>
+              <td class="prop">:active</td>
+              <td>Durante o clique</td>
+            </tr>
+            <tr>
+              <td class="prop">:focus</td>
+              <td>Campo selecionado (input)</td>
+            </tr>
+            <tr>
+              <td class="prop">:first-child</td>
+              <td>Primeiro filho do pai</td>
+            </tr>
+            <tr>
+              <td class="prop">:last-child</td>
+              <td>Último filho do pai</td>
+            </tr>
+            <tr>
+              <td class="prop">:nth-child(2)</td>
+              <td>Segundo filho</td>
+            </tr>
+            <tr>
+              <td class="prop">:nth-child(even)</td>
+              <td>Filhos pares</td>
+            </tr>
           </table>
         </div>
       </div>
 
       <div class="subsection mt10">// propriedades rápidas — referência geral</div>
       <table class="ref-table">
-        <tr><th>Propriedade</th><th>Valores comuns</th><th>Para que serve</th></tr>
-        <tr><td class="prop">box-sizing</td><td class="val">border-box</td><td class="desc">padding/border dentro do width — SEMPRE usar</td></tr>
-        <tr><td class="prop">overflow</td><td class="val">hidden | auto | scroll</td><td class="desc">controla conteúdo que vaza</td></tr>
-        <tr><td class="prop">opacity</td><td class="val">0 a 1</td><td class="desc">transparência</td></tr>
-        <tr><td class="prop">border-radius</td><td class="val">4px | 50%</td><td class="desc">bordas arredondadas / círculo</td></tr>
-        <tr><td class="prop">box-shadow</td><td class="val">0 4px 12px rgba(0,0,0,.2)</td><td class="desc">sombra no elemento</td></tr>
-        <tr><td class="prop">transition</td><td class="val">all 0.3s ease</td><td class="desc">animação suave no hover</td></tr>
-        <tr><td class="prop">transform</td><td class="val">translateY(-2px) / scale(1.05)</td><td class="desc">mover/escalar sem afetar layout</td></tr>
-        <tr><td class="prop">cursor</td><td class="val">pointer | default | text</td><td class="desc">aparência do cursor</td></tr>
-        <tr><td class="prop">object-fit</td><td class="val">cover | contain | fill</td><td class="desc">imagem dentro de caixa</td></tr>
-        <tr><td class="prop">gap</td><td class="val">16px / 12px 24px</td><td class="desc">espaço entre itens flex/grid</td></tr>
-        <tr><td class="prop">list-style</td><td class="val">none</td><td class="desc">remove bullets de &lt;ul&gt;</td></tr>
-        <tr><td class="prop">pointer-events</td><td class="val">none</td><td class="desc">não intercepta cliques</td></tr>
+        <tr>
+          <th>Propriedade</th>
+          <th>Valores comuns</th>
+          <th>Para que serve</th>
+        </tr>
+        <tr>
+          <td class="prop">box-sizing</td>
+          <td class="val">border-box</td>
+          <td class="desc">padding/border dentro do width — SEMPRE usar</td>
+        </tr>
+        <tr>
+          <td class="prop">overflow</td>
+          <td class="val">hidden | auto | scroll</td>
+          <td class="desc">controla conteúdo que vaza</td>
+        </tr>
+        <tr>
+          <td class="prop">opacity</td>
+          <td class="val">0 a 1</td>
+          <td class="desc">transparência</td>
+        </tr>
+        <tr>
+          <td class="prop">border-radius</td>
+          <td class="val">4px | 50%</td>
+          <td class="desc">bordas arredondadas / círculo</td>
+        </tr>
+        <tr>
+          <td class="prop">box-shadow</td>
+          <td class="val">0 4px 12px rgba(0,0,0,.2)</td>
+          <td class="desc">sombra no elemento</td>
+        </tr>
+        <tr>
+          <td class="prop">transition</td>
+          <td class="val">all 0.3s ease</td>
+          <td class="desc">animação suave no hover</td>
+        </tr>
+        <tr>
+          <td class="prop">transform</td>
+          <td class="val">translateY(-2px) / scale(1.05)</td>
+          <td class="desc">mover/escalar sem afetar layout</td>
+        </tr>
+        <tr>
+          <td class="prop">cursor</td>
+          <td class="val">pointer | default | text</td>
+          <td class="desc">aparência do cursor</td>
+        </tr>
+        <tr>
+          <td class="prop">object-fit</td>
+          <td class="val">cover | contain | fill</td>
+          <td class="desc">imagem dentro de caixa</td>
+        </tr>
+        <tr>
+          <td class="prop">gap</td>
+          <td class="val">16px / 12px 24px</td>
+          <td class="desc">espaço entre itens flex/grid</td>
+        </tr>
+        <tr>
+          <td class="prop">list-style</td>
+          <td class="val">none</td>
+          <td class="desc">remove bullets de &lt;ul&gt;</td>
+        </tr>
+        <tr>
+          <td class="prop">pointer-events</td>
+          <td class="val">none</td>
+          <td class="desc">não intercepta cliques</td>
+        </tr>
       </table>
 
       <div class="callout tip mt10">
-        💡 Seletores úteis: <code>.pai &gt; .filho</code> (filho direto) · <code>.pai .filho</code> (qualquer descendente) · <code>.a + .b</code> (irmão imediato) · <code>[atributo]</code> (seletor de atributo)
+        💡 Seletores úteis: <code>.pai &gt; .filho</code> (filho direto) · <code>.pai .filho</code> (qualquer
+        descendente) · <code>.a + .b</code> (irmão imediato) · <code>[atributo]</code> (seletor de atributo)
       </div>
     </section>
 
   </main>
 </body>
+
 </html>
